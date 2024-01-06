@@ -12,6 +12,7 @@ import Admin from "./components/admin/Admin"
 import InsertAdmin from "./components/admin/InsertAdmin"
 import DeleteAdmin from "./components/admin/DeleteAdmin"
 import EditAdmin from "./components/admin/EditAdmin"
+import CodeRunner from "./components/CodeRunner";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -19,6 +20,7 @@ root.render(
   <Routes>
     <Route path='/' element={<HomePage />} ></Route>
     <Route path='/login' element={<Login />}></Route>
+    <Route path='/runcode' element={<CodeRunner />}></Route>
     <Route path='/homeadmin' element={<HomeAdmin />}></Route>
     <Route path='/people' element={<People />}></Route>
     <Route path='/admin' element={<Admin />}></Route>
