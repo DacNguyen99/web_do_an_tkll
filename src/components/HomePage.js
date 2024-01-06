@@ -12,7 +12,7 @@ function HomePage() {
         <body>
             <nav>
                 <div className={styles.nav}>
-                    <div><Link to='/'>TRANG CHỦ</Link></div>
+                    <div><Link to='/runcode'>XÁC THỰC</Link></div>
                     <div><Link to='/'><img src={logo} alt="logo"/></Link></div>
                     <div><Link to='/login'>ĐĂNG NHẬP</Link></div>
                 </div>
