@@ -124,6 +124,23 @@ a {
     background-color: rgba(0, 0, 0, 0.15);
 }
 
+.right .btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.right .btn button {
+    width: 100px;
+    color: #FFFFFF;
+    background-color: #1488D8;
+    border-radius: 10px;
+    padding: 5px;
+    border-style: none;
+    margin-right: 10px;
+}
+
 .right .tbl {
     background-color: #FFFFFF;
 }
