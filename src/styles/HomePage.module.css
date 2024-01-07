@@ -25,11 +25,14 @@ nav {
     padding: 10px;
 }
 
-.nav div:nth-child(1) a {
+.nav div:nth-child(1) button.buttonClass {
+    background-color: #E8E8E8;
     color: #030391;
     font-size: 20px;
     font-weight: bold;
     cursor: pointer;
+    border: 1px solid transparent;
+    font-family: 'Baloo Bhaijaan 2', sans-serif;
 }
 
 .nav div:nth-child(2) a img {
