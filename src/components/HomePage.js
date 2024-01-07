@@ -1,18 +1,26 @@
-import React from "react"
+import React, { useState } from "react";
 import styles from "../styles/HomePage.module.css"
 import logo from "../images/logo.png"
 import content_1 from "../images/content_1.png"
 import secondContent from "../images/secondContent.jpg"
 import participant from "../images/participant.jpg"
 import frVideo from "../video/Face Recognition Guide.mp4"
+import CodeRunner from "../components/CodeRunner"
 import { Link } from "react-router-dom"
 
 function HomePage() {
+    const [isDialogOpenbuttom, setIsDialogOpenbuttom] = useState(false);
+    const handleCloseDialog = () => {
+        setIsDialogOpenbuttom(false);
+    };
+    
     return (
         <body>
             <nav>
                 <div className={styles.nav}>
-                    <div><Link to='/runcode'>XÁC THỰC</Link></div>
+                    <div>
+                        <button className={styles.buttonClass} onClick={() => setIsDialogOpenbuttom(true)}>XÁC THỰC</button>
+                    </div>
                     <div><Link to='/'><img src={logo} alt="logo"/></Link></div>
                     <div><Link to='/login'>ĐĂNG NHẬP</Link></div>
                 </div>
@@ -65,6 +73,10 @@ function HomePage() {
                     <i class="fa-brands fa-github"></i><p>Github: <Link id={styles.link}><span>https://github.com/DacNguyen99/DATKLL---Group-7</span></Link></p>
                 </div>
             </div>
+            <CodeRunner
+            isOpen={isDialogOpenbuttom}
+            handleClose={handleCloseDialog}
+            />
         </body>
     );
 }
