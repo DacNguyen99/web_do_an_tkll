@@ -28,6 +28,12 @@ function People() {
                     <div><i class="fa-solid fa-clock-rotate-left"></i><Link style={{color: "#000000"}}>History</Link></div>
                 </div>
                 <div className={styles.right}>
+                    <div className={styles.btn}>
+                        <div className={styles.deletebtn}><Link to='/add'><button>Thêm</button></Link></div>
+                        <div className={styles.deletebtn}><button>Xóa</button></div>
+                        <div className={styles.deletebtn}><button>Sửa</button></div>
+                    </div>
+
                     <div className={styles.tbl}>
                             <table class="table">
                                 <thead>
