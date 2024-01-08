@@ -23,6 +23,15 @@ def run_face_rec():
     except Exception as e:
         logging.error(f'Error running face_rec.py: {str(e)}')
         return jsonify({'error': str(e)})
+
+@app.route('/run_register', methods=['GET'])
+def run_register():
+    try:
+        result = subprocess.run(['python', 'register.py'], stdout=subprocess.PIPE, text=True)
+        output = result.stdout
+        return jsonify({'output': output})
+    except Exception as e:
+        return jsonify({'error': str(e)})
     
 if __name__ == '__main__':
     app.run(debug=True)
