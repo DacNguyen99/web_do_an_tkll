@@ -46,7 +46,7 @@ class Register_Window:
         elif self.filename == "":
             mbox.showerror("Input Error", "Image missing!")
         else:
-            filepath = os.getcwd() + "/src/facial_recognition/" + path + "/" + self.name_entry.get()
+            filepath = path + "/" + self.name_entry.get()
             os.mkdir(filepath)
             shutil.copy(self.filename, filepath)
 
