@@ -43,7 +43,7 @@ function DeleteAdmin() {
                     <div><i class="fa-solid fa-house"></i><Link to="/homeadmin" style={{color: "#000000"}}>Home</Link></div>
                     <div><i class="fa-solid fa-people-group"></i><Link to="/people" style={{color: "#000000"}}>People</Link></div>
                     <div><i class="fa-solid fa-users"></i><Link to="/admin" style={{color: "#000000"}}>Admin</Link></div>
-                    <div><i class="fa-solid fa-clock-rotate-left"></i><Link style={{color: "#000000"}}>History</Link></div>
+                    <div><i class="fa-solid fa-clock-rotate-left"></i><Link to="/history" style={{color: "#000000"}}>History</Link></div>
                 </div>
                 <div className={styles.right}>  
                     <div className={styles.form}>

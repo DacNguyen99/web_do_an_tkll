@@ -26,6 +26,12 @@ router.post('/nowlogin', (req, res) => {
   }
 });
 
+router.get('/getHistory', (req, res) => {
+  schemas.history.find()
+  .then(history => res.json(history))
+  .catch(err => res.json(err))
+})
+
 router.get('/getAdmins', (req, res) => {
   schemas.admins.find()
   .then(admins => res.json(admins))

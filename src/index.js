@@ -12,7 +12,8 @@ import Admin from "./components/admin/Admin"
 import InsertAdmin from "./components/admin/InsertAdmin"
 import DeleteAdmin from "./components/admin/DeleteAdmin"
 import EditAdmin from "./components/admin/EditAdmin"
-import CodeRunner from "./components/CodeRunner";
+import CodeRunner from "./components/CodeRunner"
+import History from './components/admin/History';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -27,6 +28,7 @@ root.render(
     <Route path='/insertadmin' element={<InsertAdmin />}></Route>
     <Route path='/deleteadmin' element={<DeleteAdmin />}></Route>
     <Route path='/editadmin' element={<EditAdmin />}></Route>
+    <Route path='/history' element={<History />}></Route>
   </Routes>
   </BrowserRouter>
 );

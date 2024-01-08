@@ -1,5 +1,3 @@
-#! /usr/bin/python
-
 # import the necessary packages
 from imutils.video import VideoStream
 from imutils.video import FPS
@@ -22,6 +20,8 @@ import time
 import cv2
 import os
 import numpy as np
+from pymongo_get_database import get_database
+import datetime
 
 RELAY = 18
 GPIO.setwarnings(False)
@@ -32,6 +32,10 @@ GPIO.output(RELAY,GPIO.HIGH)
 currentname = "unknown"
 #Determine faces from encodings.pickle file model created from train_model.py
 encodingsP = "encodings.pickle"
+
+dbName = get_database()
+users = dbName["peoples"]
+history = dbName["history"]
 
 path = "dataset"
 names = []
@@ -80,18 +84,23 @@ while True:
 		
 		if faceDis[matchIndex] < 0.40:
 			name = names[matchIndex].upper()
+			prevTime = time.time()
 			# to unlock the door
 			if doorUnlock == False:
 				GPIO.output(RELAY,GPIO.LOW)
-				prevTime = time.time()
 				doorUnlock = True
 				print("door unlock")
+				cv2.putText(frame, "Door Unlock", (10, 10), cv2.FONT_HERSHEY_COMPLEX, 1, (0, 0, 255), 2)
+				datetime_obj = datetime.datetime.now()
+
+				users.update_one({"name": name}, {"$inc": {"recog": 1}})
+				history.insert_one({"name": name, "time": datetime_obj})
 		else:
 			name = "Unknown"
 
 		y1 ,x2, y2, x1 = box
 		cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 255, 0), 2)
-		cv2.putText(frame, name, (x2, y2), cv2.FONT_HERSHEY_COMPLEX, 1, (255, 255, 255), 2)
+		cv2.putText(frame, name, (x2, y2), cv2.FONT_HERSHEY_COMPLEX, 1, (255, 0, 0), 2)
 	#lock the door after 5 seconds
 	if doorUnlock == True and time.time() - prevTime > 5:
 		doorUnlock = False
@@ -150,8 +159,8 @@ while True:
 		GPIO.output(RELAY,GPIO.HIGH)
 		print("door lock")
 		break
-	# quit when door lock over 5s
-	if (doorUnlock == False and time.time() - prevTime > 5):
+	# quit when door lock over 10s
+	if (doorUnlock == False and time.time() - prevTime > 10):
 		break
 
 	# update the FPS counter
