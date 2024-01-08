@@ -42,5 +42,14 @@ def run_train_model():
     except Exception as e:
         return jsonify({'error': str(e)})
     
+@app.route('/run_delete_user', methods=['GET'])
+def run_delete_user():
+    try:
+        result = subprocess.run(['python', 'delete_user.py'], stdout=subprocess.PIPE, text=True)
+        output = result.stdout
+        return jsonify({'output': output})
+    except Exception as e:
+        return jsonify({'error': str(e)})
+    
 if __name__ == '__main__':
     app.run(debug=True)
