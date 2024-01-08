@@ -1026,3 +1026,51 @@ INFO:werkzeug: * Detected change in 'C:\\Users\\Admin\\Downloads\\Web\\web_do_an
 INFO:werkzeug: * Restarting with stat
 WARNING:werkzeug: * Debugger is active!
 INFO:werkzeug: * Debugger PIN: 411-252-446
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 411-252-446
+INFO:werkzeug: * Detected change in 'C:\\Users\\Admin\\Downloads\\Web\\web_do_an_tkll\\src\\facial_recognition\\facial_req.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 411-252-446
+INFO:root:Received input_data: example_input
+INFO:root:Output: [INFO] loading encodings + face detector...
+[0.61511912 0.38664223]
+1
+door unlock
+[0.60722804 0.36168655]
+1
+[0.64007277 0.33264894]
+1
+[0.61505738 0.31149548]
+1
+[0.62320787 0.31095445]
+1
+[0.64313226 0.35157479]
+1
+[0.58918679 0.35130294]
+1
+[0.62514206 0.3653704 ]
+1
+[0.61065863 0.37606166]
+1
+[0.61289865 0.39382955]
+1
+door lock
+[INFO] elasped time: 4.86
+[INFO] approx. FPS: 1.85
+
+INFO:werkzeug:127.0.0.1 - - [09/Jan/2024 02:03:16] "GET /run_face_rec?input_data=example_input HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Admin\\Downloads\\Web\\web_do_an_tkll\\src\\facial_recognition\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 411-252-446
+INFO:werkzeug:127.0.0.1 - - [09/Jan/2024 02:27:01] "GET /run_train_model HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Jan/2024 02:27:12] "GET /run_train_model HTTP/1.1" 200 -
