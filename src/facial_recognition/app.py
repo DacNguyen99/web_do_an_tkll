@@ -34,7 +34,7 @@ def run_register():
         return jsonify({'error': str(e)})
 
 @app.route('/run_train_model', methods=['GET'])
-def run_register():
+def run_train_model():
     try:
         result = subprocess.run(['python', 'train_model.py'], stdout=subprocess.PIPE, text=True)
         output = result.stdout
