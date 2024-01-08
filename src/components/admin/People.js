@@ -33,6 +33,16 @@ function People() {
         }
     };
 
+    const handleRunDeleteUser = async () => {
+        try {
+            const response = await fetch('http://localhost:5000/run_delete_user');
+            const data = await response.json();
+            console.log(data.output);
+        } catch (error) {
+            console.error('Error running delete_user.py:', error);
+        }
+    };
+
     return(
         <body>
             <div className={styles.container}>
@@ -46,11 +56,12 @@ function People() {
                     <div><i class="fa-solid fa-people-group"></i><Link to="/people" style={{color: "#000000"}}>People</Link></div>
                     <div><i class="fa-solid fa-users"></i><Link to="/admin" style={{color: "#000000"}}>Admin</Link></div>
                     <div><i class="fa-solid fa-clock-rotate-left"></i><Link to="/history" style={{color: "#000000"}}>History</Link></div>
+                    <div><i class="fa fa-sign-out" aria-hidden="true"></i><Link to="/" style={{color: "#000000"}}>Log out</Link></div>
                 </div>
                 <div className={styles.right}>
                     <div className={styles.btn}>
                         <div className={styles.addbtn}><button onClick={handleRunRegister}>Add</button></div>
-                        <div className={styles.deletebtn}><button>Delete</button></div>
+                        <div className={styles.deletebtn}><button onClick={handleRunDeleteUser}>Delete</button></div>
                         <div className={styles.updatebtn}><button onClick={handleRunTrainModel}>Update</button></div>
                     </div>
 
