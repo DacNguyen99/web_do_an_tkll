@@ -13,6 +13,26 @@ function People() {
         .catch(e => console.log(e))
     }, [])
 
+    const handleRunRegister = async () => {
+        try {
+            const response = await fetch('http://localhost:5000/run_register');
+            const data = await response.json();
+            console.log(data.output);
+        } catch (error) {
+            console.error('Error running register.py:', error);
+        }
+    };
+
+    const handleRunTrainModel = async () => {
+        try {
+            const response = await fetch('http://localhost:5000/run_train_model');
+            const data = await response.json();
+            console.log(data.output);
+        } catch (error) {
+            console.error('Error running train_model.py:', error);
+        }
+    };
+
     return(
         <body>
             <div className={styles.container}>
@@ -29,9 +49,9 @@ function People() {
                 </div>
                 <div className={styles.right}>
                     <div className={styles.btn}>
-                        <div className={styles.addbtn}><Link to='/insertpeople'><button>Thêm</button></Link></div>
-                        <div className={styles.deletebtn}><button>Xóa</button></div>
-                        <div className={styles.updatebtn}><button>Cập nhật</button></div>
+                        <div className={styles.addbtn}><button onClick={handleRunRegister}>Add</button></div>
+                        <div className={styles.deletebtn}><button>Delete</button></div>
+                        <div className={styles.updatebtn}><button onClick={handleRunTrainModel}>Update</button></div>
                     </div>
 
                     <div className={styles.tbl}>
