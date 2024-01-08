@@ -115,6 +115,19 @@ a {
     font-size: 20px;
 }
 
+.left div:nth-child(7) {
+    margin-bottom: 20px;
+}
+
+.left div:nth-child(7) i {
+    font-size: 25px;
+    margin-right: 10px;
+}
+
+.left div:nth-child(7) a {
+    font-size: 20px;
+}
+
 /*----------------------------------------- right -----------------------------------------*/
 .right {
     display: flex;
