@@ -29,7 +29,7 @@ function People() {
                 </div>
                 <div className={styles.right}>
                     <div className={styles.btn}>
-                        <div className={styles.deletebtn}><Link to='/add'><button>Thêm</button></Link></div>
+                        <div className={styles.deletebtn}><Link to='/insertpeople'><button>Thêm</button></Link></div>
                         <div className={styles.deletebtn}><button>Xóa</button></div>
                         <div className={styles.deletebtn}><button>Sửa</button></div>
                     </div>
