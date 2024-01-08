@@ -32,6 +32,15 @@ def run_register():
         return jsonify({'output': output})
     except Exception as e:
         return jsonify({'error': str(e)})
+
+@app.route('/run_train_model', methods=['GET'])
+def run_register():
+    try:
+        result = subprocess.run(['python', 'train_model.py'], stdout=subprocess.PIPE, text=True)
+        output = result.stdout
+        return jsonify({'output': output})
+    except Exception as e:
+        return jsonify({'error': str(e)})
     
 if __name__ == '__main__':
     app.run(debug=True)
