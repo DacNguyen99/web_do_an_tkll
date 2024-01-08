@@ -28,7 +28,7 @@ class Delete_Window:
         if (self.name_entry.get() == ""):
             mbox.showerror("Input Error", "Please fill in the blank input!")
         else:
-            folderpath = os.getcwd() + "/src/facial_recognition/dataset/" + self.name_entry.get()
+            folderpath = os.getcwd() + "/dataset/" + self.name_entry.get()
             print(folderpath)
             if os.path.isdir(folderpath):
                 shutil.rmtree(folderpath)
