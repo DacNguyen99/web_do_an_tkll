@@ -35,7 +35,7 @@ encodingsP = "encodings.pickle"
 
 dbName = get_database()
 users = dbName["peoples"]
-history = dbName["history"]
+history = dbName["histories"]
 
 path = "dataset"
 names = []
@@ -83,7 +83,7 @@ while True:
 		print(matchIndex)
 		
 		if faceDis[matchIndex] < 0.40:
-			name = names[matchIndex].upper()
+			name = names[matchIndex]
 			prevTime = time.time()
 			# to unlock the door
 			if doorUnlock == False:
@@ -93,12 +93,14 @@ while True:
 				cv2.putText(frame, "Door Unlock", (10, 10), cv2.FONT_HERSHEY_COMPLEX, 1, (0, 0, 255), 2)
 				datetime_obj = datetime.datetime.now()
 
+				found = users.find_one({'name': name})
 				users.update_one({"name": name}, {"$inc": {"recog": 1}})
+
 				history.insert_one({"name": name, "time": datetime_obj})
 		else:
 			name = "Unknown"
 
-		y1 ,x2, y2, x1 = box
+		y1 ,x2, y2, x1 = box	
 		cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 255, 0), 2)
 		cv2.putText(frame, name, (x2, y2), cv2.FONT_HERSHEY_COMPLEX, 1, (255, 0, 0), 2)
 	#lock the door after 5 seconds
