@@ -29,9 +29,9 @@ function People() {
                 </div>
                 <div className={styles.right}>
                     <div className={styles.btn}>
-                        <div className={styles.deletebtn}><Link to='/add'><button>Thêm</button></Link></div>
+                        <div className={styles.addbtn}><Link to='/insertpeople'><button>Thêm</button></Link></div>
                         <div className={styles.deletebtn}><button>Xóa</button></div>
-                        <div className={styles.deletebtn}><button>Sửa</button></div>
+                        <div className={styles.updatebtn}><button>Cập nhật</button></div>
                     </div>
 
                     <div className={styles.tbl}>
