@@ -23,12 +23,11 @@ function HomeAdmin() {
                 </div>
                 <div className={styles.right}>
                     <div>
-                        <p>MTCNN</p>
-                        <img src={mtcnn} alt="mtcnn" width={'500px'} />
-                    </div>
-                    <div>
-                        <p>FACENET</p>
-                        <img src={facenet} alt="facenet" width={'500px'} />
+                        <img
+                            src="https://candid.technology/wp-content/uploads/2018/12/Biometric-facial-recognition.jpg"
+                            alt="Biometric Facial Recognition"
+                            style={{ width: '100%', margin: '10pt' }}
+                        />
                     </div>
                 </div>
             </div>
