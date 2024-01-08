@@ -28,9 +28,9 @@ function Admin() {
                 </div>
                 <div className={styles.right}>
                     <div className={styles.btn}>
-                        <div className={styles.deletebtn}><Link to='/insertadmin'><button>Thêm</button></Link></div>
-                        <div className={styles.deletebtn}><Link to='/deleteadmin'><button>Xóa</button></Link></div>
-                        <div className={styles.deletebtn}><Link to='/editadmin'><button>Sửa</button></Link></div>
+                        <div className={styles.addbtn}><Link to='/insertadmin'><button>Add</button></Link></div>
+                        <div className={styles.deletebtn}><Link to='/deleteadmin'><button>Delete</button></Link></div>
+                        <div className={styles.updatebtn}><Link to='/editadmin'><button>Update</button></Link></div>
                     </div>
                 
                     <div className={styles.tbl}>
